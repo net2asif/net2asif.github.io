@@ -969,7 +969,238 @@
             box-shadow: 0 15px 35px rgba(79, 172, 254, 0.6);
         }
 
-        /* Contact Section */
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            margin: 4rem 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--text-light);
+            box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+            position: relative;
+            z-index: 2;
+            animation: educationPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes educationPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6); }
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(79, 172, 254, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .timeline-content:hover::before {
+            left: 100%;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: var(--text-dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.3rem;
+            color: var(--neon-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .education-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .education-tag {
+            background: var(--secondary-gradient);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .certifications-grid {
+            margin-top: 5rem;
+        }
+
+        .certifications-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .certification-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, var(--neon-blue), var(--neon-pink), var(--neon-green), var(--neon-blue));
+            animation: certRotate 6s linear infinite;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .certification-card::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: var(--bg-darker);
+            border-radius: 18px;
+            z-index: -1;
+        }
+
+        .certification-card:hover::before {
+            opacity: 1;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.3);
+        }
+
+        @keyframes certRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--text-light);
+            box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+            animation: certIconFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes certIconFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+
+        .cert-content {
+            flex: 1;
+        }
+
+        .cert-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .cert-content p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-skills {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-skill {
+            background: var(--green-gradient);
+            color: var(--text-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(211, 153, 194, 0.3);
+        }
+
+        
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1364,6 +1595,13 @@
             }
         }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -1378,6 +1616,7 @@
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -1432,6 +1671,78 @@
             </div>
         </div>
     </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-badge">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </div>
+                <h2 class="section-title">Academic Excellence</h2>
+                <p class="section-subtitle">
+                    Building strong foundations in computer science and data analytics
+                </p>
+            </div>
+            
+            <div class="education-timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">2020 - 2024</div>
+                        <h3>Bachelor of Computer Science</h3>
+                        <h4>University of Engineering and Technology Peshawar</h4>
+                        <p>
+                            Comprehensive study in computer science fundamentals, data structures, 
+                            algorithms, software engineering, and database management systems. 
+                            Specialized coursework in data analytics and machine learning.
+                        </p>
+                        <div class="education-tags">
+                            <span class="education-tag">Computer Science</span>
+                            <span class="education-tag">Data Structures</span>
+                            <span class="education-tag">Algorithms</span>
+                            <span class="education-tag">Database Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications-grid fade-in">
+                <h3 class="certifications-title">🏆 Professional Certifications</h3>
+                
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-ibm"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h4>IBM Data Science Professional Certificate</h4>
+                        <p>Comprehensive program covering Python, SQL, data visualization, machine learning, and data science methodology</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Python</span>
+                            <span class="cert-skill">Machine Learning</span>
+                            <span class="cert-skill">Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h4>Google Data Analytics Professional Certificate</h4>
+                        <p>Advanced training in data analysis, visualization, and business intelligence using industry-standard tools</p>
+                        <div class="cert-skills">
+                            <span class="cert-skill">Data Analysis</span>
+                            <span class="cert-skill">Tableau</span>
+                            <span class="cert-skill">Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!-- About Section -->
     <section class="section alt" id="about">
@@ -1542,6 +1853,28 @@
                         Advanced formulas, pivot tables, macros, and business intelligence solutions
                     </p>
                 </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="skill-name">Machine Learning</h3>
+                    <div class="skill-level">85%</div>
+                    <p class="skill-description">
+                        Scikit-learn, PyCaret, PyTorch, and production-ready AI model deployment
+                    </p>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="skill-name">NLP & LLMs</h3>
+                    <div class="skill-level">80%</div>
+                    <p class="skill-description">
+                        NLTK, OpenAI, Groq, LangChain, HuggingFace, and vector databases
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1569,6 +1902,9 @@
                 <button class="filter-btn" data-filter="tableau">
                     <i class="fas fa-chart-line"></i> Tableau Magic
                 </button>
+                <button class="filter-btn" data-filter="excel">
+                    <i class="fas fa-file-excel"></i> Excel Mastery
+                </button>
             </div>
 
             <div class="projects-grid">
@@ -1582,9 +1918,9 @@
                     <div class="project-content">
                         <h3 class="project-title">🏗️ Data Warehouse Mastery</h3>
                         <p class="project-description">
-                            Architected a comprehensive data warehouse with Bronze Layer for data ingestion, 
-                            Silver Layer for cleansing & transformation, and Gold Layer for star schema modeling. 
-                            A complete end-to-end data engineering marvel!
+                            <strong>Bronze Layer:</strong> Comprehensive data ingestion from multiple sources<br>
+                            <strong>Silver Layer:</strong> Advanced data cleansing & transformation processes<br>
+                            <strong>Gold Layer:</strong> Optimized star schema modeling for analytics excellence
                         </p>
                         <div class="project-tags">
                             <span class="project-tag">SQL</span>
@@ -1607,16 +1943,17 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">🔍 SQL EDA Excellence</h3>
+                        <h3 class="project-title">🔍 SQL Exploratory Data Analysis</h3>
                         <p class="project-description">
-                            Deep-dive exploratory data analysis using advanced SQL techniques to uncover hidden 
-                            patterns, trends, and insights from complex datasets. Data detective work at its finest!
+                            Comprehensive EDA using advanced SQL techniques including window functions, 
+                            CTEs, and statistical analysis. Uncovered hidden patterns and trends through 
+                            data profiling, outlier detection, and correlation analysis.
                         </p>
                         <div class="project-tags">
                             <span class="project-tag">SQL</span>
                             <span class="project-tag">EDA</span>
-                            <span class="project-tag">Data Mining</span>
-                            <span class="project-tag">Analytics</span>
+                            <span class="project-tag">Statistical Analysis</span>
+                            <span class="project-tag">Data Profiling</span>
                         </div>
                     </div>
                     <div class="project-actions">
@@ -1633,21 +1970,104 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">🧠 Advanced SQL Analytics</h3>
+                        <h3 class="project-title">🧠 SQL Advanced Data Analysis</h3>
                         <p class="project-description">
-                            Sophisticated analytical queries and statistical analysis using SQL for business 
-                            intelligence and strategic decision-making support. Pure analytical genius!
+                            Sophisticated analytical queries featuring complex joins, recursive CTEs, 
+                            advanced aggregations, and predictive analytics. Built comprehensive 
+                            business intelligence solutions for strategic decision-making.
                         </p>
                         <div class="project-tags">
                             <span class="project-tag">Advanced SQL</span>
                             <span class="project-tag">Business Intelligence</span>
-                            <span class="project-tag">Statistics</span>
-                            <span class="project-tag">Strategic Analytics</span>
+                            <span class="project-tag">Predictive Analytics</span>
+                            <span class="project-tag">Strategic Insights</span>
                         </div>
                     </div>
                     <div class="project-actions">
                         <a href="https://github.com/net2asif" class="project-btn" target="_blank">
                             <i class="fab fa-github"></i> View Magic
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Excel Projects -->
+                <div class="project-card fade-in" data-category="excel">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">📊 Excel Dashboard Mastery</h3>
+                        <p class="project-description">
+                            Interactive Excel dashboards with advanced pivot tables, dynamic charts, 
+                            and automated reporting. Features include KPI tracking, trend analysis, 
+                            and executive-level business intelligence solutions.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">Dashboard</span>
+                            <span class="project-tag">Pivot Tables</span>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/net2asif" class="project-btn" target="_blank">
+                            <i class="fab fa-github"></i> View Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in" data-category="excel">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">🧮 Advanced Excel Analytics</h3>
+                        <p class="project-description">
+                            Complex financial modeling and data analysis using advanced Excel functions, 
+                            VBA macros, and statistical tools. Automated reporting workflows and 
+                            data validation systems for enterprise-level operations.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Excel VBA</span>
+                            <span class="project-tag">Financial Modeling</span>
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">Advanced Formulas</span>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/net2asif" class="project-btn" target="_blank">
+                            <i class="fab fa-github"></i> Explore Analytics
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in" data-category="excel">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">👥 HR Analytics in Excel</h3>
+                        <p class="project-description">
+                            Comprehensive HR analytics solution built in Excel featuring employee 
+                            performance tracking, retention analysis, and workforce planning. 
+                            Automated reporting with interactive charts and trend analysis.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">HR Analytics</span>
+                            <span class="project-tag">Workforce Planning</span>
+                            <span class="project-tag">Performance Tracking</span>
+                        </div>
+                    </div>
+                    <div class="project-actions">
+                        <a href="https://github.com/net2asif" class="project-btn" target="_blank">
+                            <i class="fab fa-github"></i> View HR Analytics
                         </a>
                     </div>
                 </div>
@@ -2256,33 +2676,33 @@
     </script>
 </body>
 </html>
-                            <h4>Email</h4>
-                            <p>net2asif5050@gmail.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+92 311 7397676</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Islamabad, Pakistan</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="contact-details">
+                            
+                            <div class="contact-item">
+    <div class="contact-icon">
+        <i class="fas fa-envelope"></i>
+    </div>
+    <div class="contact-details">
+        <h4>Email</h4>
+        <p>asifdata360@gmail.com</p>
+    </div>
+</div>
+
+<div class="contact-item">
+    <div class="contact-icon">
+        <i class="fas fa-phone"></i>
+    </div>
+    <div class="contact-details">
+        <h4>Phone</h4>
+        <p>+92 311 7397676</p>
+    </div>
+</div>
+
+<div class="contact-item">
+    <div class="contact-icon">
+        <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <div class="contact-details">
+        <h4>Location</h4>
+        <p>Riadh, KSA</p>
+    </div>
+</div>
