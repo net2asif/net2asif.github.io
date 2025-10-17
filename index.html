@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Asif - Data Wizard</title>
+    <title>Muhammad Asif - Profestional Data Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -39,7 +39,7 @@
             color: var(--text);
             overflow-x: hidden;
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.8;
         }
 
         /* Navigation */
@@ -97,6 +97,7 @@
             font-weight: 500;
             position: relative;
             padding-bottom: 0.25rem;
+            transition: var(--transition);
         }
 
         .nav-link::after {
@@ -113,6 +114,11 @@
         .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .mobile-menu-toggle {
@@ -168,6 +174,11 @@
             font-weight: 600;
             width: max-content;
             box-shadow: 0 2px 10px rgba(20, 184, 166, 0.2);
+            transition: var(--transition);
+        }
+
+        .hero-badge:hover {
+            transform: scale(1.05);
         }
 
         .hero-title {
@@ -193,6 +204,7 @@
             color: var(--gray);
             margin-bottom: 2.5rem;
             max-width: 80%;
+            font-weight: 400;
         }
 
         .hero-buttons {
@@ -250,6 +262,11 @@
             position: relative;
             animation: float 5s ease-in-out infinite;
             box-shadow: 0 20px 40px rgba(79, 70, 229, 0.3);
+            transition: var(--transition);
+        }
+
+        .hero-orb:hover {
+            transform: scale(1.05);
         }
 
         .orb-icons {
@@ -279,12 +296,13 @@
         .orb-icon:hover {
             transform: scale(1.2);
             background: rgba(255,255,255,0.25);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
 
-        .orb-icon:nth-child(1) { top: 15%; left: 15%; }
-        .orb-icon:nth-child(2) { top: 15%; right: 15%; }
-        .orb-icon:nth-child(3) { bottom: 15%; left: 15%; }
-        .orb-icon:nth-child(4) { bottom: 15%; right: 15%; }
+        .orb-icon:nth-child(1) { top: 15%; left: 15%; animation: pulse 2s infinite; }
+        .orb-icon:nth-child(2) { top: 15%; right: 15%; animation: pulse 2.5s infinite; }
+        .orb-icon:nth-child(3) { bottom: 15%; left: 15%; animation: pulse 3s infinite; }
+        .orb-icon:nth-child(4) { bottom: 15%; right: 15%; animation: pulse 2.2s infinite; }
 
         /* Sections */
         .section {
@@ -307,6 +325,7 @@
             background-clip: text;
             margin-bottom: 1.5rem;
             text-align: center;
+            letter-spacing: -0.025em;
         }
 
         .section-subtitle {
@@ -316,6 +335,7 @@
             max-width: 700px;
             margin: 0 auto 5rem;
             font-weight: 400;
+            letter-spacing: 0.025em;
         }
 
         /* About */
@@ -352,7 +372,8 @@
             font-size: 1.125rem;
             color: var(--gray);
             line-height: 1.8;
-            font-weight: 300;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
         .stats {
@@ -389,6 +410,7 @@
             font-size: 1.125rem;
             color: var(--gray);
             font-weight: 500;
+            letter-spacing: 0.025em;
         }
 
         /* Skills */
@@ -420,7 +442,7 @@
         }
 
         .skill-card:hover .skill-icon {
-            transform: rotate(360deg);
+            transform: scale(1.1) rotate(5deg);
         }
 
         .skill-name {
@@ -428,6 +450,7 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1rem;
+            letter-spacing: -0.025em;
         }
 
         .skill-bar {
@@ -437,6 +460,7 @@
             margin-bottom: 1.5rem;
             position: relative;
             overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .skill-progress {
@@ -444,119 +468,101 @@
             height: 100%;
             border-radius: 9999px;
             transition: width 1.5s ease-out;
+            box-shadow: 0 0 10px rgba(20, 184, 166, 0.3);
         }
 
         .skill-description {
             font-size: 1.125rem;
             color: var(--gray);
-            font-weight: 300;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
 
         /* Education */
-        .education-timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto 5rem;
-        }
-
-        .education-timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--light), transparent);
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 1fr 50px 1fr;
-            gap: 2rem;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(even) {
-            direction: rtl;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            direction: ltr;
-        }
-
-        .timeline-icon {
-            background: var(--white);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .education-content {
+            max-width: 800px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent);
-            box-shadow: 0 0 0 4px var(--white), var(--shadow);
-            position: relative;
-            z-index: 1;
+            flex-direction: column;
+            gap: 3rem;
         }
 
-        .timeline-content {
+        .education-item {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
+            padding: 2.5rem;
+            border-radius: 20px;
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
 
-        .timeline-content:hover {
-            transform: translateY(-5px);
+        .education-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
 
-        .timeline-badge {
-            display: inline-block;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+        .education-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(to right, var(--accent), #0d9488);
             color: var(--white);
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.25rem;
             border-radius: 9999px;
             font-size: 0.875rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            width: max-content;
+            margin-bottom: 1.5rem;
         }
 
-        .timeline-title {
-            font-size: 1.5rem;
+        .education-title {
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
         }
 
-        .timeline-sub {
-            font-size: 1.125rem;
+        .education-sub {
+            font-size: 1.25rem;
             color: var(--gray);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
-        .timeline-desc {
+        .education-desc {
             font-size: 1.125rem;
             color: var(--gray);
+            line-height: 1.8;
+            font-weight: 400;
             margin-bottom: 1.5rem;
-            font-weight: 300;
         }
 
         .education-tags {
             display: flex;
-            gap: 0.75rem;
             flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .education-tag {
             background: var(--light);
-            padding: 0.5rem 1rem;
+            color: var(--gray);
+            padding: 0.5rem 1.25rem;
             border-radius: 9999px;
             font-size: 0.875rem;
-            color: var(--gray);
             font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .education-tag:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .certifications-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 4rem 0 2rem;
+            text-align: center;
         }
 
         .cert-grid {
@@ -571,52 +577,57 @@
             border-radius: 20px;
             box-shadow: var(--shadow);
             display: flex;
+            flex-direction: column;
             gap: 1.5rem;
             transition: var(--transition);
         }
 
         .cert-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
 
         .cert-icon {
             font-size: 3rem;
             color: var(--secondary);
-            flex-shrink: 0;
-        }
-
-        .cert-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            align-self: center;
         }
 
         .cert-title {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
+            text-align: center;
         }
 
         .cert-desc {
             font-size: 1.125rem;
             color: var(--gray);
-            font-weight: 300;
+            line-height: 1.8;
+            font-weight: 400;
+            text-align: center;
         }
 
         .cert-tags {
             display: flex;
-            gap: 0.75rem;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 0.75rem;
         }
 
         .cert-tag {
             background: var(--light);
-            padding: 0.5rem 1rem;
+            color: var(--gray);
+            padding: 0.5rem 1.25rem;
             border-radius: 9999px;
             font-size: 0.875rem;
-            color: var(--gray);
             font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .cert-tag:hover {
+            background: var(--secondary);
+            color: var(--white);
         }
 
         /* Projects */
@@ -631,7 +642,7 @@
         .filter-btn {
             background: var(--light);
             color: var(--text);
-            padding: 0.75rem 1.75rem;
+            padding: 0.75rem 2rem;
             border-radius: 9999px;
             font-weight: 500;
             transition: var(--transition);
@@ -644,7 +655,8 @@
         .filter-btn:hover {
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
-            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 20px rgba(99, 102, 241, 0.2);
         }
 
         .projects-grid {
@@ -663,7 +675,7 @@
         }
 
         .project-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-15px) scale(1.02);
             box-shadow: 0 25px 40px rgba(0,0,0,0.15);
         }
 
@@ -674,24 +686,13 @@
             align-items: center;
             justify-content: center;
             font-size: 5rem;
-            color: var(--accent);
-            position: relative;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
-            opacity: 0;
+            color: var(--primary);
             transition: var(--transition);
         }
 
-        .project-card:hover .project-image::before {
-            opacity: 1;
+        .project-card:hover .project-image {
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            color: var(--white);
         }
 
         .project-content {
@@ -709,23 +710,29 @@
             font-size: 1.125rem;
             color: var(--gray);
             margin-bottom: 1.5rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .project-tags {
             display: flex;
-            gap: 0.75rem;
             flex-wrap: wrap;
+            gap: 0.75rem;
             margin-bottom: 2rem;
         }
 
         .project-tag {
             background: var(--light);
-            padding: 0.5rem 1rem;
+            color: var(--gray);
+            padding: 0.5rem 1.25rem;
             border-radius: 9999px;
             font-size: 0.875rem;
-            color: var(--gray);
             font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-tag:hover {
+            background: var(--accent);
+            color: var(--white);
         }
 
         .project-btn {
@@ -735,15 +742,12 @@
             color: var(--secondary);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--secondary);
-            border-radius: 8px;
             transition: var(--transition);
         }
 
         .project-btn:hover {
-            background: var(--secondary);
-            color: var(--white);
+            color: var(--primary);
+            transform: translateX(5px);
         }
 
         /* Contact */
@@ -778,13 +782,18 @@
         .contact-icon {
             font-size: 2rem;
             color: var(--accent);
-            background: rgba(20, 184, 166, 0.1);
+            background: var(--light);
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: rotate(360deg);
         }
 
         .contact-details h4 {
@@ -797,7 +806,7 @@
         .contact-details p {
             font-size: 1.125rem;
             color: var(--gray);
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .contact-form {
@@ -813,13 +822,13 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
         }
 
         .form-group label {
-            font-size: 1.125rem;
+            font-size: 1rem;
             font-weight: 500;
-            color: var(--primary);
+            color: var(--gray);
+            margin-bottom: 0.75rem;
         }
 
         .form-group input,
@@ -829,14 +838,15 @@
             border-radius: 12px;
             font-size: 1.125rem;
             transition: var(--transition);
-            background: var(--white);
-            font-weight: 300;
+            background: var(--light);
+            color: var(--text);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--primary);
             box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+            background: var(--white);
         }
 
         .submit-btn {
@@ -854,13 +864,13 @@
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 15px 20px rgba(99, 102, 241, 0.2);
         }
 
         /* Footer */
         .footer {
-            background: linear-gradient(to top, var(--light), var(--white));
-            padding: 5rem 0 3rem;
+            background: var(--light);
+            padding: 5rem 0;
             text-align: center;
         }
 
@@ -868,7 +878,7 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .social-link {
@@ -887,19 +897,15 @@
 
         .social-link:hover {
             color: var(--white);
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            transform: translateY(-5px);
+            background: var(--secondary);
+            transform: translateY(-5px) rotate(5deg);
             box-shadow: 0 15px 25px rgba(99, 102, 241, 0.2);
         }
 
         .footer-text {
-            font-size: 1.125rem;
+            font-size: 1rem;
             color: var(--gray);
-            font-weight: 300;
-        }
-
-        .footer-text i {
-            color: var(--accent);
+            font-weight: 400;
         }
 
         /* Modal */
@@ -909,22 +915,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(17, 24, 39, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(5px);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 2000;
+            transition: opacity 0.3s ease;
         }
 
         .modal-content {
             background: var(--white);
             max-width: 700px;
-            margin: 2rem;
+            margin: 1rem;
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            box-shadow: 0 30px 50px rgba(0,0,0,0.2);
             position: relative;
+            text-align: center;
         }
 
         .close-modal {
@@ -939,6 +947,7 @@
 
         .close-modal:hover {
             color: var(--primary);
+            transform: rotate(90deg);
         }
 
         #modal-title {
@@ -953,13 +962,9 @@
             color: var(--gray);
             margin-bottom: 2rem;
             line-height: 1.8;
-            font-weight: 300;
         }
 
         #modal-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             color: var(--white);
             padding: 1rem 2rem;
@@ -967,24 +972,18 @@
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
+            box-shadow: var(--shadow);
         }
 
         #modal-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 15px 20px rgba(99, 102, 241, 0.2);
         }
 
         /* Responsive */
-        @media (max-width: 1280px) {
-            .container {
-                max-width: 1024px;
-            }
-        }
-
         @media (max-width: 1024px) {
             .hero-content, .about-grid, .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
             }
 
             .hero-orb {
@@ -996,26 +995,8 @@
                 font-size: 3rem;
             }
 
-            .education-timeline::before {
-                left: 25px;
-            }
-
-            .timeline-item {
-                grid-template-columns: 50px 1fr;
-                gap: 1.5rem;
-            }
-
-            .timeline-icon {
-                left: 0;
-                transform: none;
-            }
-
-            .timeline-item:nth-child(even) {
-                direction: ltr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 2.5rem;
             }
         }
 
@@ -1027,10 +1008,10 @@
                 width: 100%;
                 background: var(--white);
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 2rem;
                 padding: 2rem;
                 display: none;
-                box-shadow: var(--shadow);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
 
             .nav-menu.active {
@@ -1047,26 +1028,23 @@
                 transition: var(--transition);
             }
 
+            .mobile-menu-toggle:hover {
+                transform: rotate(90deg);
+            }
+
             .hero-title {
                 font-size: 2.5rem;
             }
 
             .section-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-orb {
-                width: 300px;
-                height: 300px;
-            }
-
-            .orb-icon {
                 font-size: 2rem;
-                width: 60px;
-                height: 60px;
             }
 
-            .skill-card, .cert-card, .project-card, .contact-form {
+            .projects-grid {
+                gap: 2rem;
+            }
+
+            .contact-form {
                 padding: 2rem;
             }
         }
@@ -1077,37 +1055,22 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.75rem;
             }
 
             .container {
                 padding: 0 1.5rem;
             }
 
-            .hero-description {
-                max-width: 100%;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                justify-content: center;
-            }
-
-            .about-grid {
-                gap: 3rem;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
+            .hero-orb {
+                width: 300px;
+                height: 300px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo"><i class="fas fa-brain"></i> MA</a>
@@ -1125,6 +1088,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <div class="hero-text" data-aos="fade-right">
@@ -1150,14 +1114,12 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section class="section" id="about" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <p class="section-subtitle">Data-Driven Innovation Expert</p>
             <div class="about-grid">
-                <div class="about-image" data-aos="zoom-in">
-                    <img src="https://via.placeholder.com/500x600" alt="Muhammad Asif" class="about-img">
-                </div>
                 <div class="about-content" data-aos="fade-left">
                     <p class="about-text">I'm an analytical and innovative Data Analyst with expertise in Python, SQL, and Tableau, passionate about turning complex datasets into meaningful insights. With a Bachelor's degree in Computer Science from the University of Engineering and Technology Peshawar, I bring a strong technical foundation to every project.</p>
                     <p class="about-text">My experience spans across various roles including Data Analyst, Machine Learning Engineer, and Data Science & AI Trainee, where I've mastered advanced techniques in exploratory data analysis (EDA), machine learning, deep learning, and natural language processing.</p>
@@ -1181,56 +1143,57 @@
         </div>
     </section>
 
-    <section class="section" id="skills" data-aos="fade-up" style="background: var(--light);">
+    <!-- Skills Section -->
+    <section class="section" id="skills" style="background: var(--light);" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <p class="section-subtitle">Technical Arsenal</p>
             <div class="skills-grid">
-                <div class="skill-card" data-aos="fade-up">
+                <div class="skill-card" data-aos="flip-left">
                     <i class="fas fa-database skill-icon"></i>
                     <h3 class="skill-name">SQL Mastery</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="95"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="95"></div>
                     </div>
                     <p class="skill-description">Advanced querying, data warehousing, ETL processes, and complex analytical operations</p>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
                     <i class="fas fa-chart-bar skill-icon"></i>
                     <h3 class="skill-name">Tableau Wizardry</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="90"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="90"></div>
                     </div>
                     <p class="skill-description">Interactive dashboards, KPI visualization, and compelling data storytelling</p>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
                     <i class="fab fa-python skill-icon"></i>
                     <h3 class="skill-name">Python Power</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="85"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="85"></div>
                     </div>
                     <p class="skill-description">Machine learning, data analysis, automation, and AI model development</p>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
                     <i class="fas fa-file-excel skill-icon"></i>
                     <h3 class="skill-name">Excel Excellence</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="80"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="80"></div>
                     </div>
                     <p class="skill-description">Advanced formulas, pivot tables, macros, and business intelligence solutions</p>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
                     <i class="fas fa-robot skill-icon"></i>
                     <h3 class="skill-name">Machine Learning</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="85"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="85"></div>
                     </div>
                     <p class="skill-description">Scikit-learn, PyCaret, PyTorch, and production-ready AI model deployment</p>
                 </div>
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="skill-card" data-aos="flip-left" data-aos-delay="500">
                     <i class="fas fa-language skill-icon"></i>
                     <h3 class="skill-name">NLP & LLMs</h3>
                     <div class="skill-bar">
-                        <div class="skill-progress" data-width="80"></div>
+                        <div class="skill-progress" style="width: 0%;" data-width="80"></div>
                     </div>
                     <p class="skill-description">NLTK, OpenAI, Groq, LangChain, HuggingFace, and vector databases</p>
                 </div>
@@ -1238,31 +1201,28 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section class="section" id="education" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Education & Certifications</h2>
             <p class="section-subtitle">Academic Excellence & Professional Growth</p>
-            <div class="education-timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
-                    <div class="timeline-content" data-aos="fade-left">
-                        <span class="timeline-badge">2020 - 2024</span>
-                        <h3 class="timeline-title">Bachelor of Computer Science</h3>
-                        <h4 class="timeline-sub">University of Engineering and Technology Peshawar</h4>
-                        <p class="timeline-desc">Comprehensive study in computer science fundamentals, data structures, algorithms, software engineering, and database management systems. Specialized coursework in data analytics and machine learning.</p>
-                        <div class="education-tags">
-                            <span class="education-tag">Computer Science</span>
-                            <span class="education-tag">Data Structures</span>
-                            <span class="education-tag">Algorithms</span>
-                            <span class="education-tag">Database Systems</span>
-                        </div>
+            <div class="education-content">
+                <div class="education-item" data-aos="fade-right">
+                    <span class="education-badge">2020 - 2024</span>
+                    <h3 class="education-title">Bachelor of Computer Science</h3>
+                    <h4 class="education-sub">University of Engineering and Technology Peshawar</h4>
+                    <p class="education-desc">Comprehensive study in computer science fundamentals, data structures, algorithms, software engineering, and database management systems. Specialized coursework in data analytics and machine learning.</p>
+                    <div class="education-tags">
+                        <span class="education-tag">Computer Science</span>
+                        <span class="education-tag">Data Structures</span>
+                        <span class="education-tag">Algorithms</span>
+                        <span class="education-tag">Database Systems</span>
                     </div>
                 </div>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-card" data-aos="fade-up">
-                    <i class="fab fa-ibm cert-icon"></i>
-                    <div class="cert-content">
+                <h3 class="certifications-title">Professional Certifications</h3>
+                <div class="cert-grid">
+                    <div class="cert-card" data-aos="zoom-in">
+                        <i class="fab fa-ibm cert-icon"></i>
                         <h4 class="cert-title">IBM Data Science Professional Certificate</h4>
                         <p class="cert-desc">Comprehensive program covering Python, SQL, data visualization, machine learning, and data science methodology</p>
                         <div class="cert-tags">
@@ -1271,10 +1231,8 @@
                             <span class="cert-tag">Data Viz</span>
                         </div>
                     </div>
-                </div>
-                <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fab fa-google cert-icon"></i>
-                    <div class="cert-content">
+                    <div class="cert-card" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-google cert-icon"></i>
                         <h4 class="cert-title">Google Data Analytics Professional Certificate</h4>
                         <p class="cert-desc">Advanced training in data analysis, visualization, and business intelligence using industry-standard tools</p>
                         <div class="cert-tags">
@@ -1288,7 +1246,8 @@
         </div>
     </section>
 
-    <section class="section" id="projects" data-aos="fade-up" style="background: var(--light);">
+    <!-- Projects Section -->
+    <section class="section" id="projects" style="background: var(--light);" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <p class="section-subtitle">Showcasing Data Mastery</p>
@@ -1308,7 +1267,6 @@
                             <span class="project-tag">SQL</span>
                             <span class="project-tag">Data Warehouse</span>
                             <span class="project-tag">ETL</span>
-                            <span class="project-tag">Star Schema</span>
                         </div>
                         <a href="https://github.com/net2asif" class="project-btn" target="_blank"><i class="fab fa-github"></i> View Code</a>
                     </div>
@@ -1429,6 +1387,7 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="section" id="contact" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Contact</h2>
@@ -1453,7 +1412,7 @@
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="contact-details">
                             <h4>Location</h4>
-                            <p>Riyadh, KSA</p>
+                            <p>Riadh, KSA</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1464,22 +1423,22 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" data-aos="fade-left" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form class="contact-form" data-aos="fade-left">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <input type="text" id="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        <textarea id="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
                 </form>
@@ -1487,31 +1446,33 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/muhammad-asif" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/net2asif/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/net2asif" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://huggingface.co/net2asif" class="social-link" target="_blank"><i class="fas fa-robot"></i></a>
                 <a href="mailto:asifdata360@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                 <a href="https://public.tableau.com/app/profile/net2asif/vizzes" class="social-link" target="_blank"><i class="fas fa-chart-bar"></i></a>
             </div>
-            <p class="footer-text">© 2024 Muhammad Asif. All rights reserved. Crafted with <i class="fas fa-heart"></i> and lots of <i class="fas fa-coffee"></i></p>
+            <p class="footer-text">© 2024 Muhammad Asif. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Modal for Projects -->
     <div class="modal" id="project-modal">
         <div class="modal-content" data-aos="zoom-in">
-            <span class="close-modal"><i class="fas fa-times"></i></span>
+            <span class="close-modal">&times;</span>
             <h3 id="modal-title"></h3>
             <p id="modal-desc"></p>
-            <a id="modal-link" class="project-btn" target="_blank"><i class="fas fa-external-link-alt"></i> View Project</a>
+            <a id="modal-link" class="btn btn-primary" target="_blank">View Project</a>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1200, once: true, easing: 'ease-out-cubic' });
+        AOS.init({ duration: 1200, once: true, easing: 'ease-out-back' });
 
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1532,7 +1493,7 @@
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: 'smooth' });
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
                 navMenu.classList.remove('active');
@@ -1542,35 +1503,36 @@
         });
 
         // Typing effect
-        document.addEventListener('DOMContentLoaded', () => {
-            const heroTitle = document.querySelector('.hero-title');
-            if (heroTitle) {
-                heroTitle.textContent = '';
-                const titleText = 'Muhammad Asif';
-                let index = 0;
-                function type() {
-                    if (index < titleText.length) {
-                        heroTitle.textContent += titleText.charAt(index);
-                        index++;
-                        setTimeout(type, 100);
-                    }
-                }
-                type();
+        const heroTitle = document.querySelector('.hero-title');
+        const titleText = 'Muhammad Asif';
+        let index = 0;
+        function type() {
+            if (heroTitle && index < titleText.length) {
+                heroTitle.textContent += titleText.charAt(index);
+                index++;
+                setTimeout(type, 150);
             }
-        });
+        }
+        if (heroTitle) {
+            heroTitle.textContent = '';
+            type();
+        }
 
-        // Skill progress
-        const progressObserver = new IntersectionObserver(entries => {
+        // Skill bars
+        const progressBars = document.querySelectorAll('.skill-progress');
+        const skillObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const progresses = entry.target.querySelectorAll('.skill-progress');
-                    progresses.forEach(progress => {
-                        progress.style.width = progress.dataset.width + '%';
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.dataset.width + '%';
                     });
+                    skillObserver.unobserve(entry.target);
                 }
             });
         });
-        progressObserver.observe(document.querySelector('#skills'));
+        if (document.querySelector('#skills')) {
+            skillObserver.observe(document.querySelector('#skills'));
+        }
 
         // Project filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -1581,13 +1543,13 @@
                 btn.classList.add('active');
                 const filter = btn.dataset.filter;
                 projectCards.forEach(card => {
-                    const show = filter === 'all' || card.dataset.category === filter;
-                    card.style.opacity = show ? '1' : '0';
-                    card.style.transform = show ? 'translateY(0)' : 'translateY(20px)';
-                    card.style.pointerEvents = show ? 'auto' : 'none';
-                    setTimeout(() => {
-                        card.style.display = show ? 'block' : 'none';
-                    }, 300);
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.style.opacity = 1;
+                    } else {
+                        card.style.opacity = 0;
+                        setTimeout(() => { card.style.display = 'none'; }, 300);
+                    }
                 });
             });
         });
@@ -1604,26 +1566,41 @@
                 modalTitle.textContent = card.querySelector('.project-title').textContent;
                 modalDesc.textContent = card.querySelector('.project-desc').textContent;
                 modalLink.href = card.querySelector('.project-btn').href;
-                modalLink.textContent = card.querySelector('.project-btn').textContent;
                 modal.style.display = 'flex';
+                modal.style.opacity = 1;
             });
         });
 
         closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
+            modal.style.opacity = 0;
+            setTimeout(() => { modal.style.display = 'none'; }, 300);
         });
 
         modal.addEventListener('click', e => {
-            if (e.target === modal) modal.style.display = 'none';
+            if (e.target === modal) {
+                modal.style.opacity = 0;
+                setTimeout(() => { modal.style.display = 'none'; }, 300);
+            }
         });
 
         // Form submission
         const contactForm = document.querySelector('.contact-form');
         contactForm.addEventListener('submit', e => {
             e.preventDefault();
-            // Replace with actual form submission if needed
             alert('Message sent successfully!');
             contactForm.reset();
+        });
+
+        // Performance: debounce scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Scroll related code
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     </script>
 </body>
