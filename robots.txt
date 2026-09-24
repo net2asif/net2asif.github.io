@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://net2asif.github.io/sitemap.xml
